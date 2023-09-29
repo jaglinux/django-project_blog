@@ -19,3 +19,5 @@ TBD : migrations <br>
 ```python manage.py migrate```
 ### create superuser
 ```python manage.py createsuperuser```
+### to create new django app , example to create app by name base
+```django-admin startapp base```
