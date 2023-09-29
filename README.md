@@ -12,8 +12,8 @@ Copy the master db.sqlite3 to project folder. (Or create fresh DB as explained l
 TBD : migrations <br>
 ```python manage.py runserver```
 
-## After creating new django project, below commands are useful
-### to create new app
+## To create new django project, below commands are useful
+### to create new django project
 ```django-admin startproject project_blog```
 ### to create fresh DB
 ```python manage.py migrate```
