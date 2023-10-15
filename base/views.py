@@ -2,12 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import threading
 import time
+from .tasks import celery_test_worker
 
 # Create your views here.
 
 def home(request):
     print("home request is ", request)
     print("home request thread is ", threading.get_native_id())
+    celery_test_worker.delay(3)
     return HttpResponse("Jag home page")
 
 def room(request):
