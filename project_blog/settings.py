@@ -37,8 +37,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "base.apps.BaseConfig",
 ]
+
+CREATED_APPS = [
+    "base.apps.BaseConfig",
+    "pytorch.apps.PytorchConfig",
+]
+
+INSTALLED_APPS = INSTALLED_APPS + CREATED_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
