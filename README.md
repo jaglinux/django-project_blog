@@ -17,6 +17,9 @@ TBD : migrations <br>
 ```django-admin startproject project_blog```
 ### to create fresh DB
 ```python manage.py migrate```
+### apply migrations
+```python manage.py makemigrations``` <br>
+```python manage.py migrate```
 ### create superuser
 ```python manage.py createsuperuser```
 ### to create new django app , example to create app by name base
