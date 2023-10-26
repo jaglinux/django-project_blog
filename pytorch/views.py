@@ -1,12 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import PytorchJob
 
 # Create your views here.
 def pytorch(request):
-    pytorchJob = PytorchJob.objects.create(job_out = "Running job ")
+    pytorchJob = PytorchJob.objects.create()
+    pytorchJob.job_out = f"Running job with id {pytorchJob.id}"
     pytorchJob.save()
-    return HttpResponse("Pytorch home page")
+    return redirect(pytorch_job, pytorchJob.id)
 
 def pytorch_job(request, pk):
-    return HttpResponse(f"Pytorch job page {pk}")
+    pytorchJob = get_object_or_404(PytorchJob, pk=pk)
+    return HttpResponse(f"{pytorchJob.job_out}")
